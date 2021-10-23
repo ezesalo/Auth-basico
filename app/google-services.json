@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3932094623",
+    "project_id": "auth-basico",
+    "storage_bucket": "auth-basico.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3932094623:android:3cc2fabbbf4ecb023422aa",
+        "android_client_info": {
+          "package_name": "com.ejercicios.authbasico"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3932094623-j3irthak6ipaahde95smmhd0jemtglt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvEpKwxVs_Z1g88RLzhTzgP8ZQ1nhGV2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3932094623-j3irthak6ipaahde95smmhd0jemtglt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
