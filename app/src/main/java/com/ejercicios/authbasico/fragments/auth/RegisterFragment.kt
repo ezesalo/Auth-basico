@@ -72,24 +72,24 @@ class RegisterFragment : Fragment() {
                 val action = RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
                 v.findNavController().navigate(action)
             }else{
-                Snackbar.make(rootLayout, "Error en el registro. Verifique sus datos e intentelo nuevamente", Snackbar.LENGTH_LONG)
+                Snackbar.make(rootLayout, "Error en el registro. Verifique sus datos e inténtelo nuevamente", Snackbar.LENGTH_LONG)
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#E91E3C")).show()
             }
         })
 
         registroButton.setOnClickListener() {
-            val nombre: String = nombreRegistro.text.toString()
-            val apellido: String = apellidoRegistro.text.toString()
-            val telefono: String = telefonoRegistro.text.toString()
-            val email: String = emailRegistro.text.toString()
-            val password: String = passwordRegistro.text.toString()
+            var nombre: String = nombreRegistro.text.toString()
+            var apellido: String = apellidoRegistro.text.toString()
+            var telefono: String = telefonoRegistro.text.toString()
+            var email: String = emailRegistro.text.toString()
+            var password: String = passwordRegistro.text.toString()
 
-            val nombreValido = viewModelRegistro.validateGenerales(nombre)
-            val apellidoValido = viewModelRegistro.validateGenerales(apellido)
-            val telefonoValido = viewModelRegistro.validateGenerales(telefono)
-            val emailValido = viewModelRegistro.validateEmail(email)
-            val passwordValida = viewModelRegistro.validatePassword(password)
+            var nombreValido = viewModelRegistro.validateGenerales(nombre)
+            var apellidoValido = viewModelRegistro.validateGenerales(apellido)
+            var telefonoValido = viewModelRegistro.validateGenerales(telefono)
+            var emailValido = viewModelRegistro.validateEmail(email)
+            var passwordValida = viewModelRegistro.validatePassword(password)
 
             if (viewModelRegistro.validateForm(nombreValido, apellidoValido, telefonoValido, emailValido, passwordValida)){
                 viewModelRegistro.registrar(nombre, apellido, telefono, email, password)

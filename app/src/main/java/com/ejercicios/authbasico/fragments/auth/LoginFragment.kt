@@ -69,7 +69,7 @@ class LoginFragment : Fragment() {
                 Snackbar.make(rootLayout, "Ingreso Exitoso", Snackbar.LENGTH_LONG)
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#4CAF50")).show()
-                val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                val action = LoginFragmentDirections.actionLoginFragmentToDireccionFragment()
                 v.findNavController().navigate(action)
             }else{
                 Snackbar.make(rootLayout, "El ingreso no fue exitoso. Verifique sus datos", Snackbar.LENGTH_LONG).setAnimationMode(

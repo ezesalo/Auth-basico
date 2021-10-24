@@ -13,7 +13,7 @@ import java.util.regex.Pattern
 class RegisterViewModel : ViewModel() {
     val db = Firebase.firestore
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
-    val registroExitoso = MutableLiveData<Boolean>()
+    var registroExitoso = MutableLiveData<Boolean>()
     lateinit var msgErrorEmail: String
     lateinit var msgErrorPassword: String
     lateinit var msgErrorGeneral: String
@@ -43,16 +43,6 @@ class RegisterViewModel : ViewModel() {
             }
     }
 
-
-    //ver de borrar
-    fun camposCompletos (nombre: String, apellido: String, telefono: String,email: String, password: String ): Boolean {
-        var registroCompleto = false
-
-        if(nombre.isNotEmpty() && apellido.isNotEmpty() && telefono.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()){
-            registroCompleto = true
-        }
-        return registroCompleto
-    }
 
     fun validateEmail(email: String): Boolean {
         var emailValido: Boolean = false

@@ -14,8 +14,9 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_loginFragment_to_direccionFragment"
+            app:destination="@id/direccionFragment"
+            app:popUpTo="@id/registerFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -30,5 +31,14 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/direccionFragment"
+        android:name="com.ejercicios.authbasico.fragments.direccion.DireccionFragment"
+        android:label="direccion_fragment"
+        tools:layout="@layout/direccion_fragment" >
+        <action
+            android:id="@+id/action_direccionFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
