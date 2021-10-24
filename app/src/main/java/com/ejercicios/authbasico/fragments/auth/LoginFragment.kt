@@ -83,17 +83,18 @@ class LoginFragment : Fragment() {
             val email: String = emailLogin.text.toString()
             val password: String = passwordLogin.text.toString()
 
-            val msgErrorEmail = viewModelLogin.validateEmail(email)
-            val msgErrorPassword = viewModelLogin.validatePassword(password)
+            val emailValido = viewModelLogin.validateEmail(email)
+            val passwordValida = viewModelLogin.validatePassword(password)
 
-            if (!msgErrorEmail.isNullOrEmpty()){
-                emailLogin.error = msgErrorEmail
-
-            }else if (!msgErrorPassword.isNullOrEmpty()){
-                passwordLogin.error = msgErrorPassword
-            }else{
+            if (viewModelLogin.validateLogin(emailValido, passwordValida)){
                 viewModelLogin.ingresar(email, password)
+            }else{
+                asignarErrores(emailValido, passwordValida)
+                Snackbar.make(rootLayout, "Campos invalidos. Verifique sus datos", Snackbar.LENGTH_LONG).setAnimationMode(
+                    BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
+                    Color.parseColor("#E91E3C")).show()
             }
+
 
         }
 
@@ -101,5 +102,10 @@ class LoginFragment : Fragment() {
             val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
             v.findNavController().navigate(action)
         }
+    }
+
+    fun asignarErrores (email: Boolean, password: Boolean){
+        if (!email) emailLogin.error = viewModelLogin.msgErrorEmail
+        if (!password) passwordLogin.error = viewModelLogin.msgErrorPassword
     }
 }

@@ -85,26 +85,30 @@ class RegisterFragment : Fragment() {
             val email: String = emailRegistro.text.toString()
             val password: String = passwordRegistro.text.toString()
 
-            val msgErrorNombre = viewModelRegistro.validateGenerales(nombre)
-            val msgErrorApellido = viewModelRegistro.validateGenerales(apellido)
-            val msgErrorTelefono = viewModelRegistro.validateGenerales(telefono)
-            val msgErrorEmail = viewModelRegistro.validateEmail(email)
-            val msgErrorPassword = viewModelRegistro.validatePassword(password)
+            val nombreValido = viewModelRegistro.validateGenerales(nombre)
+            val apellidoValido = viewModelRegistro.validateGenerales(apellido)
+            val telefonoValido = viewModelRegistro.validateGenerales(telefono)
+            val emailValido = viewModelRegistro.validateEmail(email)
+            val passwordValida = viewModelRegistro.validatePassword(password)
 
-          if (!msgErrorNombre.isNullOrEmpty()){
-              nombreRegistro.error = msgErrorNombre
-          }else if (!msgErrorApellido.isNullOrEmpty()){
-              apellidoRegistro.error = msgErrorApellido
-          }else if (!msgErrorTelefono.isNullOrEmpty()){
-              telefonoRegistro.error = msgErrorTelefono
-          }else if (!msgErrorEmail.isNullOrEmpty()){
-              emailRegistro.error = msgErrorEmail
-          }else if (!msgErrorPassword.isNullOrEmpty()){
-              passwordRegistro.error = msgErrorPassword
-          }else viewModelRegistro.registrar(nombre, apellido, telefono, email, password)
-
+            if (viewModelRegistro.validateForm(nombreValido, apellidoValido, telefonoValido, emailValido, passwordValida)){
+                viewModelRegistro.registrar(nombre, apellido, telefono, email, password)
+            }else{
+                asignarErrores(nombreValido, apellidoValido, telefonoValido, emailValido, passwordValida)
+                Snackbar.make(rootLayout, "Campos invalidos. Verifique sus datos", Snackbar.LENGTH_LONG).setAnimationMode(
+                    BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
+                    Color.parseColor("#E91E3C")).show()
+            }
         }
 
             }
+
+    fun asignarErrores (nombre: Boolean, apellido: Boolean, telefono: Boolean,email: Boolean, password: Boolean){
+        if (!nombre) nombreRegistro.error = viewModelRegistro.msgErrorGeneral
+        if (!apellido) apellidoRegistro.error = viewModelRegistro.msgErrorGeneral
+        if (!telefono) telefonoRegistro.error = viewModelRegistro.msgErrorGeneral
+        if (!email) emailRegistro.error = viewModelRegistro.msgErrorEmail
+        if (!password) passwordRegistro.error = viewModelRegistro.msgErrorPassword
+    }
 
         }

@@ -14,6 +14,9 @@ class RegisterViewModel : ViewModel() {
     val db = Firebase.firestore
     val auth: FirebaseAuth = FirebaseAuth.getInstance()
     val registroExitoso = MutableLiveData<Boolean>()
+    lateinit var msgErrorEmail: String
+    lateinit var msgErrorPassword: String
+    lateinit var msgErrorGeneral: String
 
      fun registrar (nombre: String, apellido: String, telefono: String, email: String, password: String){
 
@@ -51,20 +54,21 @@ class RegisterViewModel : ViewModel() {
         return registroCompleto
     }
 
-    fun validateEmail(email: String): String? {
-        var emailValido: String? = null
+    fun validateEmail(email: String): Boolean {
+        var emailValido: Boolean = false
 
         if (email.isEmpty()){
-            emailValido = "Debe completar su email"
+            msgErrorEmail = "Debe completar su email"
         }else if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()){
-            emailValido = "Debe completar un email valido"
+            msgErrorEmail = "Debe completar un email valido"
+        }else{
+            emailValido = true
         }
-
         return emailValido
     }
 
-    fun validatePassword(pass: String): String? {
-        var passwordValida: String? = null
+    fun validatePassword(pass: String): Boolean {
+        var passwordValida: Boolean = false
         val passwordRegex = Pattern.compile(
             "^" +
                     "(?=.*[0-9])" +         //at least 1 digit
@@ -78,21 +82,32 @@ class RegisterViewModel : ViewModel() {
 
 
         if (pass.isEmpty()){
-            passwordValida = "Debe completar su contraseña"
+            msgErrorPassword = "Debe completar su contraseña"
         }else if (!passwordRegex.matcher(pass).matches()){
-            passwordValida = "Contraseña demasiado debil, elija otra por favor."
+            msgErrorPassword = "Contraseña demasiado debil, elija otra por favor."
+        }else{
+            passwordValida = true
         }
         return passwordValida
     }
 
-    fun validateGenerales(texto: String): String? {
+    fun validateGenerales(texto: String): Boolean {
 
-        var textValido: String? = null
-
+        var textValido: Boolean = false
         if (texto.isEmpty()){
-            textValido = "Debe completar este campo"
+            msgErrorGeneral = "Debe completar este campo"
+        }else{
+            textValido = true
         }
-
         return textValido
+    }
+
+    fun validateForm(nombre: Boolean, apellido: Boolean, telefono: Boolean,email: Boolean, password: Boolean ): Boolean{
+        val result = arrayOf(nombre, apellido, telefono, email, password)
+
+        if (false in result){
+            return false
+        }
+        return true
     }
 }

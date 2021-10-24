@@ -15,6 +15,8 @@ class LoginViewModel : ViewModel() {
 
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
     val loginExitoso = MutableLiveData<Boolean>()
+    lateinit var msgErrorEmail: String
+    lateinit var msgErrorPassword: String
 
     fun ingresar (email: String, password: String){
 
@@ -39,25 +41,35 @@ class LoginViewModel : ViewModel() {
         return registroCompleto
     }
 
-    fun validateEmail(email: String): String? {
-        var emailValido: String? = null
-
+    fun validateEmail(email: String): Boolean {
+        var emailValido: Boolean = false
         if (email.isEmpty()){
-            emailValido = "Debe completar su email"
+            msgErrorEmail = "Debe completar su email"
         }else if (!PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()){
-            emailValido = "Debe completar un email valido"
+            msgErrorEmail = "Debe completar un email valido"
+        }else{
+            emailValido = true
         }
-
         return emailValido
     }
 
-    fun validatePassword(pass: String): String? {
-        var passwordValida: String? = null
-
+    fun validatePassword(pass: String): Boolean {
+        var passwordValida: Boolean = false
         if (pass.isEmpty()){
-            passwordValida = "Debe completar su contraseña"
+            msgErrorPassword = "Debe completar su contraseña"
+        }else{
+            passwordValida = true
         }
         return passwordValida
+    }
+
+    fun validateLogin (email: Boolean, password: Boolean): Boolean{
+        val result = arrayOf(email, password)
+
+        if (false in result){
+            return false
+        }
+        return true
     }
 
 }
