@@ -17,6 +17,8 @@ import com.ejercicios.authbasico.R
 import com.ejercicios.authbasico.viewModels.auth.LoginViewModel
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -24,8 +26,10 @@ import kotlinx.coroutines.launch
 class LoginFragment : Fragment() {
 
     lateinit var v: View
-    lateinit var emailLogin: EditText
-    lateinit var passwordLogin: EditText
+    lateinit var email2TxtLayout: TextInputLayout
+    lateinit var email2TextInputEdit: TextInputEditText
+    lateinit var password2TxtLayout: TextInputLayout
+    lateinit var password2TextInputEdit: TextInputEditText
     lateinit var loginButton: Button
     lateinit var irARegistro: Button
     lateinit var rootLayout: ConstraintLayout
@@ -44,8 +48,11 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.login_fragment, container, false)
-        emailLogin = v.findViewById(R.id.emailLoginTxt)
-        passwordLogin = v.findViewById(R.id.passwordLoginTxt)
+        email2TxtLayout = v.findViewById(R.id.emailInputLayOutTxt2)
+        email2TextInputEdit = v.findViewById(R.id.emailRegistroTxt2)
+
+        password2TxtLayout = v.findViewById(R.id.passInputLayOutTxt2)
+        password2TextInputEdit = v.findViewById(R.id.passRegistroTxt2)
         loginButton = v.findViewById(R.id.loginButton)
         irARegistro = v.findViewById(R.id.segundo_text_registro)
         rootLayout = v.findViewById(R.id.frameLayout)
@@ -80,11 +87,13 @@ class LoginFragment : Fragment() {
 
         loginButton.setOnClickListener(){
 
-            val email: String = emailLogin.text.toString()
-            val password: String = passwordLogin.text.toString()
+            var email: String = email2TextInputEdit.text.toString()
+            var password: String = password2TextInputEdit.text.toString()
 
-            val emailValido = viewModelLogin.validateEmail(email)
-            val passwordValida = viewModelLogin.validatePassword(password)
+            var emailValido = viewModelLogin.validateEmail(email)
+            var passwordValida = viewModelLogin.validatePassword(password)
+
+            sacarErrores(emailValido, passwordValida)
 
             if (viewModelLogin.validateLogin(emailValido, passwordValida)){
                 viewModelLogin.ingresar(email, password)
@@ -105,7 +114,12 @@ class LoginFragment : Fragment() {
     }
 
     fun asignarErrores (email: Boolean, password: Boolean){
-        if (!email) emailLogin.error = viewModelLogin.msgErrorEmail
-        if (!password) passwordLogin.error = viewModelLogin.msgErrorPassword
+        if (!email) email2TxtLayout.error = viewModelLogin.msgErrorEmail
+        if (!password) password2TxtLayout.error = viewModelLogin.msgErrorPassword
+    }
+
+    fun sacarErrores (email: Boolean, password: Boolean){
+        if (email) email2TxtLayout.error = null
+        if (password) password2TxtLayout.error = null
     }
 }
