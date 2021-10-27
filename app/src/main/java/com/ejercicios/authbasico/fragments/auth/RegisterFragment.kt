@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -49,6 +50,8 @@ class RegisterFragment : Fragment() {
     lateinit var password2TxtLayout: TextInputLayout
     lateinit var password2TextInputEdit: TextInputEditText
 
+    lateinit var progressBar: ProgressBar
+
 
     private val viewModelRegistro: RegisterViewModel by viewModels()
 
@@ -86,6 +89,8 @@ class RegisterFragment : Fragment() {
         password2TxtLayout = v.findViewById(R.id.passInputLayOutTxt2)
         password2TextInputEdit = v.findViewById(R.id.passRegistroTxt2)
 
+        progressBar = v.findViewById(R.id.progressBar2)
+
         return v
     }
 
@@ -96,8 +101,11 @@ class RegisterFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        progressBar.setVisibility(View.GONE)
+
         viewModelRegistro.registroExitoso.observe(viewLifecycleOwner, Observer { result ->
             if (result){
+                progressBar.setVisibility(View.GONE)
                 Snackbar.make(rootLayout, "Registro Exitoso", Snackbar.LENGTH_LONG)
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#4CAF50")).show()
@@ -106,6 +114,7 @@ class RegisterFragment : Fragment() {
 
                 v.findNavController().backQueue
             }else{
+                progressBar.setVisibility(View.GONE)
                 Snackbar.make(rootLayout, "Error en el registro. Verifique sus datos e inténtelo nuevamente", Snackbar.LENGTH_LONG)
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#E91E3C")).show()
@@ -131,6 +140,7 @@ class RegisterFragment : Fragment() {
             sacarErrores(nombreValido, apellidoValido, telefonoValido, emailValido, passwordValida)
 
             if (viewModelRegistro.validateForm(nombreValido, apellidoValido, telefonoValido, emailValido, passwordValida)){
+                progressBar.setVisibility(View.VISIBLE)
                 viewModelRegistro.registrar(nombre, apellido, telefono, email, password)
             }else{
                 asignarErrores(nombreValido, apellidoValido, telefonoValido, emailValido, passwordValida)

@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
+import android.widget.ProgressBar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -19,9 +19,6 @@ import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
 
@@ -33,6 +30,7 @@ class LoginFragment : Fragment() {
     lateinit var loginButton: Button
     lateinit var irARegistro: Button
     lateinit var rootLayout: ConstraintLayout
+    lateinit var progressBar: ProgressBar
     private val viewModelLogin: LoginViewModel by viewModels()
 
    // lateinit var emailV2: EditText
@@ -55,6 +53,7 @@ class LoginFragment : Fragment() {
         password2TextInputEdit = v.findViewById(R.id.passRegistroTxt2)
         loginButton = v.findViewById(R.id.loginButton)
         irARegistro = v.findViewById(R.id.segundo_text_registro)
+        progressBar = v.findViewById(R.id.progressBar)
         rootLayout = v.findViewById(R.id.frameLayout)
 
      //   emailV2 = v.findViewById(R.id.emailLoginTxt2)
@@ -71,14 +70,18 @@ class LoginFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
+        progressBar.setVisibility(View.GONE)
+
         viewModelLogin.loginExitoso.observe(viewLifecycleOwner, Observer { result ->
             if (result){
                 Snackbar.make(rootLayout, "Ingreso Exitoso", Snackbar.LENGTH_LONG)
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#4CAF50")).show()
+                progressBar.setVisibility(View.GONE)
                 val action = LoginFragmentDirections.actionLoginFragmentToDireccionFragment()
                 v.findNavController().navigate(action)
             }else{
+                progressBar.setVisibility(View.GONE)
                 Snackbar.make(rootLayout, "El ingreso no fue exitoso. Verifique sus datos", Snackbar.LENGTH_LONG).setAnimationMode(
                     BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#E91E3C")).show()
@@ -96,6 +99,7 @@ class LoginFragment : Fragment() {
             sacarErrores(emailValido, passwordValida)
 
             if (viewModelLogin.validateLogin(emailValido, passwordValida)){
+                progressBar.setVisibility(View.VISIBLE)
                 viewModelLogin.ingresar(email, password)
             }else{
                 asignarErrores(emailValido, passwordValida)
