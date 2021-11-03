@@ -1,9 +1,7 @@
 package com.ejercicios.authbasico.fragments.auth
 
 import android.graphics.Color
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,38 +19,23 @@ import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class RegisterFragment : Fragment() {
 
     lateinit var v: View
-    lateinit var nombreRegistro: EditText
-    lateinit var apellidoRegistro: EditText
-    lateinit var telefonoRegistro: EditText
-    lateinit var emailRegistro: EditText
-    lateinit var passwordRegistro: EditText
     lateinit var registroButton: Button
     lateinit var rootLayout: ConstraintLayout
     lateinit var nombre2TxtLayout: TextInputLayout
     lateinit var nombre2TextInputEdit: TextInputEditText
-
     lateinit var apellido2TxtLayout: TextInputLayout
     lateinit var apellido2TextInputEdit: TextInputEditText
-
     lateinit var telefono2TxtLayout: TextInputLayout
     lateinit var telefono2TextInputEdit: TextInputEditText
-
     lateinit var email2TxtLayout: TextInputLayout
     lateinit var email2TextInputEdit: TextInputEditText
-
     lateinit var password2TxtLayout: TextInputLayout
     lateinit var password2TextInputEdit: TextInputEditText
-
     lateinit var progressBar: ProgressBar
-
-
     private val viewModelRegistro: RegisterViewModel by viewModels()
 
     companion object {
@@ -67,28 +50,18 @@ class RegisterFragment : Fragment() {
     ): View? {
         v = inflater.inflate(R.layout.register_fragment, container, false)
 
-//        nombreRegistro = v.findViewById(R.id.nombreRegistroTxt)
-//        apellidoRegistro = v.findViewById(R.id.apellidoRegistroTxt)
-//        telefonoRegistro = v.findViewById(R.id.telefonoRegistroTxt)
-//        emailRegistro = v.findViewById(R.id.emailRegistroTxt)
-//        passwordRegistro = v.findViewById(R.id.passwordRegistroTxt)
         registroButton = v.findViewById(R.id.RegistroButton)
         rootLayout = v.findViewById(R.id.frameLayout2)
-        nombre2TxtLayout = v.findViewById(R.id.nombreInputLayOutTxt2)
-        nombre2TextInputEdit = v.findViewById(R.id.nombreRegistroTxt2)
-
-        apellido2TxtLayout = v.findViewById(R.id.apellidoInputLayOutTxt2)
-        apellido2TextInputEdit = v.findViewById(R.id.apellidoRegistroTxt2)
-
-        telefono2TxtLayout = v.findViewById(R.id.telefonoInputLayOutTxt2)
-        telefono2TextInputEdit = v.findViewById(R.id.telefonoRegistroTxt2)
-
-        email2TxtLayout = v.findViewById(R.id.emailInputLayOutTxt2)
-        email2TextInputEdit = v.findViewById(R.id.emailRegistroTxt2)
-
-        password2TxtLayout = v.findViewById(R.id.passInputLayOutTxt2)
-        password2TextInputEdit = v.findViewById(R.id.passRegistroTxt2)
-
+        nombre2TxtLayout = v.findViewById(R.id.nombreInputLayOutTxt)
+        nombre2TextInputEdit = v.findViewById(R.id.nombreRegistroTxt)
+        apellido2TxtLayout = v.findViewById(R.id.apellidoInputLayOutTxt)
+        apellido2TextInputEdit = v.findViewById(R.id.apellidoRegistroTxt)
+        telefono2TxtLayout = v.findViewById(R.id.telefonoInputLayOutTxt)
+        telefono2TextInputEdit = v.findViewById(R.id.telefonoRegistroTxt)
+        email2TxtLayout = v.findViewById(R.id.emailInputLayOutTxt)
+        email2TextInputEdit = v.findViewById(R.id.emailRegistroTxt)
+        password2TxtLayout = v.findViewById(R.id.passInputLayOutTxt)
+        password2TextInputEdit = v.findViewById(R.id.passRegistroTxt)
         progressBar = v.findViewById(R.id.progressBar2)
 
         return v
@@ -123,8 +96,6 @@ class RegisterFragment : Fragment() {
 
         registroButton.setOnClickListener() {
 
-
-           // var nombre: String = nombreRegistro.text.toString()
             var nombre: String = nombre2TextInputEdit.text.toString()
             var apellido: String = apellido2TextInputEdit.text.toString()
             var telefono: String = telefono2TextInputEdit.text.toString()

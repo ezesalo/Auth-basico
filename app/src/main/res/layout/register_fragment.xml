@@ -16,14 +16,14 @@
         android:text="@string/titulo_registro"
         android:textColor="@color/teal_700"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/nombreInputLayOutTxt2"
+        app:layout_constraintBottom_toTopOf="@+id/nombreInputLayOutTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nombreInputLayOutTxt2"
+        android:id="@+id/nombreInputLayOutTxt"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -39,14 +39,14 @@
         app:endIconMode="clear_text"
         app:errorEnabled="true"
         app:errorIconDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/apellidoInputLayOutTxt2"
+        app:layout_constraintBottom_toTopOf="@+id/apellidoInputLayOutTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RegistroTitle"
         app:startIconDrawable="@drawable/ic_pencil_action_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nombreRegistroTxt2"
+            android:id="@+id/nombreRegistroTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text">
@@ -56,7 +56,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/apellidoInputLayOutTxt2"
+        android:id="@+id/apellidoInputLayOutTxt"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -72,14 +72,14 @@
         app:endIconMode="clear_text"
         app:errorEnabled="true"
         app:errorIconDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@+id/telefonoInputLayOutTxt2"
+        app:layout_constraintBottom_toTopOf="@+id/telefonoInputLayOutTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreInputLayOutTxt2"
+        app:layout_constraintTop_toBottomOf="@+id/nombreInputLayOutTxt"
         app:startIconDrawable="@drawable/ic_pencil_action_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/apellidoRegistroTxt2"
+            android:id="@+id/apellidoRegistroTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text">
@@ -89,7 +89,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/telefonoInputLayOutTxt2"
+        android:id="@+id/telefonoInputLayOutTxt"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -106,14 +106,14 @@
         app:errorIconDrawable= "@null"
         app:errorEnabled="true"
         app:helperText="Debe ser un celular empezando con 11"
-        app:layout_constraintBottom_toTopOf="@+id/emailInputLayOutTxt2"
+        app:layout_constraintBottom_toTopOf="@+id/emailInputLayOutTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidoInputLayOutTxt2"
+        app:layout_constraintTop_toBottomOf="@+id/apellidoInputLayOutTxt"
         app:startIconDrawable="@drawable/ic_phone3_action_name">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/telefonoRegistroTxt2"
+            android:id="@+id/telefonoRegistroTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone">
@@ -123,7 +123,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailInputLayOutTxt2"
+        android:id="@+id/emailInputLayOutTxt"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -140,14 +140,14 @@
         app:endIconMode="clear_text"
         app:errorIconDrawable= "@null"
         app:errorEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/passInputLayOutTxt2"
+        app:layout_constraintBottom_toTopOf="@+id/passInputLayOutTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefonoInputLayOutTxt2"
+        app:layout_constraintTop_toBottomOf="@+id/telefonoInputLayOutTxt"
         app:startIconDrawable="@drawable/ic_email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailRegistroTxt2"
+            android:id="@+id/emailRegistroTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress">
@@ -157,7 +157,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passInputLayOutTxt2"
+        android:id="@+id/passInputLayOutTxt"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -176,11 +176,11 @@
         app:layout_constraintBottom_toTopOf="@+id/RegistroButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInputLayOutTxt2"
+        app:layout_constraintTop_toBottomOf="@+id/emailInputLayOutTxt"
         app:startIconDrawable="@drawable/ic_lock">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passRegistroTxt2"
+            android:id="@+id/passRegistroTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword">
@@ -204,7 +204,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passInputLayOutTxt2" />
+        app:layout_constraintTop_toBottomOf="@+id/passInputLayOutTxt" />
 
     <ProgressBar
         android:id="@+id/progressBar2"

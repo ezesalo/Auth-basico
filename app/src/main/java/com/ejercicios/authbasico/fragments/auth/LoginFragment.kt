@@ -46,11 +46,11 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         v = inflater.inflate(R.layout.login_fragment, container, false)
-        email2TxtLayout = v.findViewById(R.id.emailInputLayOutTxt2)
-        email2TextInputEdit = v.findViewById(R.id.emailRegistroTxt2)
+        email2TxtLayout = v.findViewById(R.id.emailInputLayOutTxt)
+        email2TextInputEdit = v.findViewById(R.id.emailRegistroTxt)
 
-        password2TxtLayout = v.findViewById(R.id.passInputLayOutTxt2)
-        password2TextInputEdit = v.findViewById(R.id.passRegistroTxt2)
+        password2TxtLayout = v.findViewById(R.id.passInputLayOutTxt)
+        password2TextInputEdit = v.findViewById(R.id.passRegistroTxt)
         loginButton = v.findViewById(R.id.loginButton)
         irARegistro = v.findViewById(R.id.segundo_text_registro)
         progressBar = v.findViewById(R.id.progressBar)
