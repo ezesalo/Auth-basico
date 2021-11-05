@@ -6,9 +6,11 @@
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/activity_auth.xml" value="0.20520833333333333" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/direccion_fragment.xml" value="0.1" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/direccion_user_item.xml" value="0.6" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/home_fragment.xml" value="0.20520833333333333" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/login_fragment.xml" value="0.4" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/register_fragment.xml" value="0.4" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/user_fragment.xml" value="0.4" />
       </map>
     </option>
   </component>

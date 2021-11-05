@@ -78,7 +78,7 @@ class LoginFragment : Fragment() {
                     .setAnimationMode(BaseTransientBottomBar.ANIMATION_MODE_FADE).setBackgroundTint(
                         Color.parseColor("#4CAF50")).show()
                 progressBar.setVisibility(View.GONE)
-                val action = LoginFragmentDirections.actionLoginFragmentToDireccionFragment()
+                val action = LoginFragmentDirections.actionLoginFragmentToUserFragment()
                 v.findNavController().navigate(action)
             }else{
                 progressBar.setVisibility(View.GONE)
