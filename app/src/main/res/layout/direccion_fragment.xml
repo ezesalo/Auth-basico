@@ -318,7 +318,7 @@
         app:endIconMode="clear_text"
         app:errorEnabled="true"
         app:errorIconDrawable="@null"
-        app:layout_constraintBottom_toTopOf="@id/btnDireccion"
+        app:layout_constraintBottom_toTopOf="@id/btnEliminarDireccion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/provinciaTextInputLayOutTxt">
@@ -336,7 +336,7 @@
 
 
     <Button
-        android:id="@+id/btnDireccion"
+        android:id="@+id/btnEliminarDireccion"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"

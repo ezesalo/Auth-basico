@@ -9,15 +9,17 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.ejercicios.authbasico.R
 import com.ejercicios.authbasico.entities.Direccion
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class DireccionUserAdapter(
     var direccionList: ArrayList<Direccion>,
-    var context: Context
+    var context: Context, var onClick: (Int) -> Unit
 ) :
     RecyclerView.Adapter<DireccionUserAdapter.DireccionHolder>() {
 
     class DireccionHolder (v: View) : RecyclerView.ViewHolder(v) {
         private var view: View
+
         init {
             this.view = v
         }
@@ -29,9 +31,10 @@ class DireccionUserAdapter(
             direccionUser.text = textoDireccion
         }
 
-        fun getCardView () : CardView {
+        fun getCardView(): CardView {
             return view.findViewById(R.id.cardDireccionUser)
         }
+
 
     }
 
@@ -46,9 +49,9 @@ class DireccionUserAdapter(
 
         holder.setDireccion(direccionAux.calle, direccionAux.numero, direccionAux.piso, direccionAux.departamento)
 
-//        holder.getCardView().setOnClickListener(){
-//            // onClick(position)
-//        }
+        holder.getCardView().setOnClickListener(){
+             onClick(position)
+        }
 
     }
 

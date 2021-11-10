@@ -6,11 +6,13 @@
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/activity_auth.xml" value="0.20520833333333333" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/direccion_fragment.xml" value="0.1" />
-        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/direccion_user_item.xml" value="0.6" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/direccion_user_item.xml" value="0.45819935691318325" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/home_fragment.xml" value="0.20520833333333333" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/item_load.xml" value="0.1859375" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/login_fragment.xml" value="0.4" />
         <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/register_fragment.xml" value="0.4" />
-        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/user_fragment.xml" value="0.4" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/update_direccion_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Ort/Cuatrimestre 4/PF/Authbasico/app/src/main/res/layout/user_fragment.xml" value="0.2" />
       </map>
     </option>
   </component>

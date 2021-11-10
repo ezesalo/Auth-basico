@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import android.widget.ProgressBar
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
@@ -104,7 +103,7 @@ class DireccionFragment : Fragment() {
         provinciaDireccionLayout = v.findViewById(R.id.provinciaTextInputLayOutTxt)
         codigoPostalDireccion = v.findViewById(R.id.cpTxt)
         codigoPostalDireccionLayout = v.findViewById(R.id.cpInputLayOutTxt)
-        btnDireccion = v.findViewById(R.id.btnDireccion)
+        btnDireccion = v.findViewById(R.id.btnEliminarDireccion)
         rootLayout = v.findViewById(R.id.frameLayout3)
         progressBar = v.findViewById(R.id.progressBar2)
 

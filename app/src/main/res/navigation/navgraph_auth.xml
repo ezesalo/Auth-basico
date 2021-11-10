@@ -39,5 +39,20 @@
         <action
             android:id="@+id/action_userFragment_to_direccionFragment"
             app:destination="@id/direccionFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_updateDireccionFragment3"
+            app:destination="@id/updateDireccionFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateDireccionFragment3"
+        android:name="com.ejercicios.authbasico.fragments.direccion.UpdateDireccionFragment"
+        android:label="update_direccion_fragment"
+        tools:layout="@layout/update_direccion_fragment" >
+        <argument
+            android:name="direccion"
+            app:argType="com.ejercicios.authbasico.entities.Direccion" />
+        <argument
+            android:name="id"
+            app:argType="string" />
     </fragment>
 </navigation>
