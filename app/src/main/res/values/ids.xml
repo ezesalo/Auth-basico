@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <item name="userTitle" type="id">userTitle</item>-->
+<!--    <item name="nombreUserInputLayOutTxt" type="id">nombreUserInputLayOutTxt</item>-->
+<!--    <item name="nombreUserTxt" type="id">nombreUserTxt</item>-->
+<!--    <item name="apellidoUserInputLayOutTxt" type="id">apellidoUserInputLayOutTxt</item>-->
+<!--    <item name="apellidoUserTxt" type="id">apellidoUserTxt</item>-->
+<!--    <item name="emailUserInputLayOutTxt" type="id">emailUserInputLayOutTxt</item>-->
+<!--    <item name="emailUserTxt" type="id">emailUserTxt</item>-->
+<!--    <item name="telefonoUserInputLayOutTxt" type="id">telefonoUserInputLayOutTxt</item>-->
+<!--    <item name="telefonoUserTxt" type="id">telefonoUserTxt</item>-->
+<!--    <item name="agregaDireccionbtn" type="id">agregaDireccionbtn</item>-->
+<!--    <item name="recyclerView2" type="id">recyclerView2</item>-->
+<!--    <item name="cambiarApellido" type="id">cambiarApellido</item>-->
+<!--    <item name="cambiarEmail" type="id">cambiarEmail</item>-->
+<!--    <item name="cambiarTelefono" type="id">cambiarTelefono</item>-->
+<!--    <item name="cambiarNombre" type="id">cambiarNombre</item>-->
+<!--    <item name="agredarDireccionMas" type="id">agredarDireccionMas</item>-->
+</resources>
